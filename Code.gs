@@ -221,7 +221,7 @@ function createKeyNames(suffix) {
 function doSaveButtonActions(taskNotes) {
   // Get response from repeatable function to see remaining requests
   // - Get present appearance info
-  const response = api_getUserInfo("items.gear.costume,items.currentPet,items.currentMount,preferences.background");
+  const response = api_getUserInfo("items.gear.costume,items.currentPet,items.currentMount");
   const respHeaders = response.getAllHeaders();
   const remainingReq = Number(respHeaders["x-ratelimit-remaining"]);
   const resetDateTime = new Date(respHeaders["x-ratelimit-reset"]);
@@ -274,7 +274,7 @@ function doSaveButtonActions(taskNotes) {
 function doLoadButtonActions(taskNotes) {
   // Get response from repeatable function to see remaining requests
   // - Get present appearance info (to be able to unequip if needed)
-  const response = api_getUserInfo("items.gear.costume,items.currentPet,items.currentMount,preferences.background");
+  const response = api_getUserInfo("items.gear.costume,items.currentPet,items.currentMount");
   const respHeaders = response.getAllHeaders();
   const remainingReq = Number(respHeaders["x-ratelimit-remaining"]);
   const resetDateTime = new Date(respHeaders["x-ratelimit-reset"]);
